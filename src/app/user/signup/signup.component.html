@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+  <a class="navbar-brand" href="/">My Chat</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+
+        <a class="nav-link" (click)="goToLogin()">Login</a>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>
+<br>
+<div class="container">
+  <form #createSignupForm="ngForm" (ngSubmit)="signUp()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">First Name</label>
+      <input type="text" class="form-control" [(ngModel)]="firstName" name="firstName" aria-describedby="firstNameHelp" placeholder="First Name" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Last Name</label>
+      <input type="text" class="form-control" [(ngModel)]="lastName" name="lastName" placeholder="Last Name" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="password"  name="password" placeholder="Password" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" [(ngModel)]="email" name="email" aria-describedby="emailHelp" placeholder="Email" required>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Mobile Number</label>
+      <input type="text" class="form-control" [(ngModel)]="mobileNumber" name="mobileNumber" placeholder="Mobile Number" required>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="!createSignupForm.form.valid">Submit</button>
+  </form>
+</div>

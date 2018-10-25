@@ -1,0 +1,5 @@
+<!-- this is for changing character when we click on particular user -->
+<!-- in angular we can change the style manually through [style.attribute] -->
+<div (click)='nameClicked()'  class="crop" [style.color]="userColor ? userColor :'white'" [style.background]="userBg ? userBg :'blue'">
+    {{firstChar}}
+  </div>
